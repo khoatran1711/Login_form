@@ -59,6 +59,12 @@
     <Compile Include="Addstudent.Designer.cs">
       <DependentUpon>Addstudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course\Add_course_for_stu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\Add_course_for_stu.Designer.cs">
+      <DependentUpon>Add_course_for_stu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course\Edit_Course.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Addstudent.resx">
       <DependentUpon>Addstudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\Add_course_for_stu.resx">
+      <DependentUpon>Add_course_for_stu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Course\Edit_Course.resx">
       <DependentUpon>Edit_Course.cs</DependentUpon>

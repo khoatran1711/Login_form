@@ -51,10 +51,11 @@ namespace Login_form
             this.btn_changepic = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Find = new System.Windows.Forms.Button();
             this.txt_Find_ID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_add_course = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_box)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -226,7 +227,7 @@ namespace Login_form
             this.btn_edit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_edit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.ForeColor = System.Drawing.Color.Teal;
-            this.btn_edit.Location = new System.Drawing.Point(292, 400);
+            this.btn_edit.Location = new System.Drawing.Point(265, 368);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(135, 34);
             this.btn_edit.TabIndex = 15;
@@ -279,14 +280,27 @@ namespace Login_form
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.btn_add_course);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btn_Find);
+            this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.txt_Find_ID);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(64, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1136, 426);
             this.panel1.TabIndex = 21;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(11, 10);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.Visible = false;
             // 
             // btn_Find
             // 
@@ -316,16 +330,18 @@ namespace Login_form
             this.panel2.Size = new System.Drawing.Size(1266, 493);
             this.panel2.TabIndex = 22;
             // 
-            // dataGridView1
+            // btn_add_course
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(11, 10);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.Visible = false;
+            this.btn_add_course.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_add_course.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_course.ForeColor = System.Drawing.Color.Teal;
+            this.btn_add_course.Location = new System.Drawing.Point(48, 368);
+            this.btn_add_course.Name = "btn_add_course";
+            this.btn_add_course.Size = new System.Drawing.Size(186, 35);
+            this.btn_add_course.TabIndex = 23;
+            this.btn_add_course.Text = "Add Course";
+            this.btn_add_course.UseVisualStyleBackColor = false;
+            this.btn_add_course.Click += new System.EventHandler(this.btn_add_course_Click);
             // 
             // editform
             // 
@@ -335,7 +351,6 @@ namespace Login_form
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_changepic);
             this.Controls.Add(this.btn_remove);
-            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -391,5 +406,6 @@ namespace Login_form
         public System.Windows.Forms.TextBox txt_Find_ID;
         public System.Windows.Forms.Button btn_Find;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_add_course;
     }
 }

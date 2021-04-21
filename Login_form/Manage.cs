@@ -46,6 +46,13 @@ namespace Login_form
                 DataGridViewImageColumn picCol = new DataGridViewImageColumn();
                 picCol = (DataGridViewImageColumn)list.Columns[7];
                 picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+               /* DataGridViewColumn col = new DataGridViewColumn();
+                col.HeaderText = "Column";
+                col.Name = "col";
+                col.Visible = true;
+                col.Width = 100;
+                col.CellTemplate = new DataGridViewTextBoxCell();
+               list.Columns.Add(col);*/
                 Con.Close();
             }
             catch (Exception ex)

@@ -142,5 +142,13 @@ namespace Login_form
                 Con.Dispose();
             }
         }
+
+        private void btn_add_course_Click(object sender, EventArgs e)
+        {
+            Course.Add_course_for_stu a = new Course.Add_course_for_stu();
+            a.txt_id.Text = txt_ID.Text;
+            a.txt_name.Text = txt_firstname.Text + " " + txt_lastname.Text;
+            a.ShowDialog();
+        }
     }
 }
