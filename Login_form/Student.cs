@@ -12,6 +12,9 @@ namespace Login_form
     class Student
     {
         SV student = new SV();
+
+       
+
         public bool insertStudent(int id, string fname, string lname, DateTime bdate, string gender, string phone, string address, MemoryStream picture)
         {
             SqlCommand command = new SqlCommand("INSERT INTO stu (id,fname,lname,bdate,gender,phone,address,picture)" + " VALUES (@id,@fn,@ln,@bdt,@gdr,@phn,@adrs,@pic)", student.GetConnection);

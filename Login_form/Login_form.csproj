@@ -59,6 +59,7 @@
     <Compile Include="Addstudent.Designer.cs">
       <DependentUpon>Addstudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Course\Add_course_for_stu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,43 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Human_User\Contact\Add_contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human_User\Contact\Add_contact.Designer.cs">
+      <DependentUpon>Add_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human_User\Contact\Contact.cs" />
+    <Compile Include="Human_User\Contact\Edit_contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human_User\Contact\Edit_contact.Designer.cs">
+      <DependentUpon>Edit_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human_User\Contact\Show_all.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human_User\Contact\Show_all.Designer.cs">
+      <DependentUpon>Show_all.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human_User\Group.cs" />
+    <Compile Include="Human_User\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human_User\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Human_User\New_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Human_User\New_User.Designer.cs">
+      <DependentUpon>New_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Manage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +147,12 @@
     </Compile>
     <Compile Include="Mydb.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Score\Add_score.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Score\Add_score.Designer.cs">
+      <DependentUpon>Add_score.cs</DependentUpon>
+    </Compile>
     <Compile Include="signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,11 +211,29 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Human_User\Contact\Add_contact.resx">
+      <DependentUpon>Add_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human_User\Contact\Edit_contact.resx">
+      <DependentUpon>Edit_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human_User\Contact\Show_all.resx">
+      <DependentUpon>Show_all.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human_User\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Human_User\New_User.resx">
+      <DependentUpon>New_User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage.resx">
       <DependentUpon>Manage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Score\Add_score.resx">
+      <DependentUpon>Add_score.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
@@ -195,6 +257,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="LoginDataSet.xsc">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LoginDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoginDataSet.xss">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="StudentDataSet.xsc">
       <DependentUpon>StudentDataSet.xsd</DependentUpon>

@@ -42,6 +42,8 @@ namespace Login_form
             this.panel1 = new System.Windows.Forms.Panel();
             this.sign_up = new System.Windows.Forms.Button();
             this.stuTableAdapter1 = new Login_form.StudentDataSetTableAdapters.stuTableAdapter();
+            this.ra_student = new System.Windows.Forms.RadioButton();
+            this.ra_human = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,7 +66,7 @@ namespace Login_form
             // 
             this.Login_btn.BackColor = System.Drawing.SystemColors.Control;
             this.Login_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Login_btn.Location = new System.Drawing.Point(204, 351);
+            this.Login_btn.Location = new System.Drawing.Point(270, 360);
             this.Login_btn.Name = "Login_btn";
             this.Login_btn.Size = new System.Drawing.Size(100, 39);
             this.Login_btn.TabIndex = 1;
@@ -153,6 +155,8 @@ namespace Login_form
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.ra_human);
+            this.panel1.Controls.Add(this.ra_student);
             this.panel1.Controls.Add(this.sign_up);
             this.panel1.Controls.Add(this.Login);
             this.panel1.Controls.Add(this.label1);
@@ -172,7 +176,7 @@ namespace Login_form
             // 
             this.sign_up.BackColor = System.Drawing.SystemColors.Control;
             this.sign_up.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.sign_up.Location = new System.Drawing.Point(445, 351);
+            this.sign_up.Location = new System.Drawing.Point(443, 360);
             this.sign_up.Name = "sign_up";
             this.sign_up.Size = new System.Drawing.Size(100, 39);
             this.sign_up.TabIndex = 9;
@@ -183,6 +187,32 @@ namespace Login_form
             // stuTableAdapter1
             // 
             this.stuTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ra_student
+            // 
+            this.ra_student.AutoSize = true;
+            this.ra_student.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ra_student.ForeColor = System.Drawing.Color.White;
+            this.ra_student.Location = new System.Drawing.Point(43, 349);
+            this.ra_student.Name = "ra_student";
+            this.ra_student.Size = new System.Drawing.Size(79, 21);
+            this.ra_student.TabIndex = 10;
+            this.ra_student.TabStop = true;
+            this.ra_student.Text = "Student";
+            this.ra_student.UseVisualStyleBackColor = true;
+            // 
+            // ra_human
+            // 
+            this.ra_human.AutoSize = true;
+            this.ra_human.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ra_human.ForeColor = System.Drawing.Color.White;
+            this.ra_human.Location = new System.Drawing.Point(43, 378);
+            this.ra_human.Name = "ra_human";
+            this.ra_human.Size = new System.Drawing.Size(144, 21);
+            this.ra_human.TabIndex = 11;
+            this.ra_human.TabStop = true;
+            this.ra_human.Text = "Human Resource";
+            this.ra_human.UseVisualStyleBackColor = true;
             // 
             // Khoafr
             // 
@@ -219,6 +249,8 @@ namespace Login_form
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button sign_up;
         private StudentDataSetTableAdapters.stuTableAdapter stuTableAdapter1;
+        private System.Windows.Forms.RadioButton ra_human;
+        private System.Windows.Forms.RadioButton ra_student;
     }
 }
 

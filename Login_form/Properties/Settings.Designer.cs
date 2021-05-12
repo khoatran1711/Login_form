@@ -32,5 +32,15 @@ namespace Login_form.Properties {
                 return ((string)(this["StudentConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-I15DKS7;Initial Catalog=Login;Integrated Security=True")]
+        public string LoginConnectionString {
+            get {
+                return ((string)(this["LoginConnectionString"]));
+            }
+        }
     }
 }

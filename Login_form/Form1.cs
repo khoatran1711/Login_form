@@ -12,7 +12,7 @@ namespace Login_form
 {
     public partial class Khoafr : Form
     {
-        
+       
         public Khoafr()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace Login_form
             Password_txt.Text = "Enter your passord";
             Account_txt.ForeColor = Color.Gray;
             Password_txt.ForeColor = Color.Gray;
-
+            ra_student.Checked = true;
         }
 
         private void Account_txt_Click(object sender, EventArgs e)
@@ -36,38 +36,81 @@ namespace Login_form
 
         private void Login_btn_Click(object sender, EventArgs e)
         {
-            Mydb db = new Mydb();
-
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            DataTable table = new DataTable();
-            SqlCommand command = new SqlCommand("SELECT * FROM Login WHERE username = @username AND password= @password", db.GetConnection);
-
-            command.Parameters.Add("@username", SqlDbType.VarChar).Value = Account_txt.Text;
-            command.Parameters.Add("@password", SqlDbType.VarChar).Value = Password_txt.Text;
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            if (table.Rows.Count>0)
+            if (ra_student.Checked)
             {
-                MessageBox.Show("Login successfully");
-                Menu menu = new Menu();
-                //this.Hide();
-                menu.ShowDialog();
-                this.Close();
-               
+                Mydb db = new Mydb();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                DataTable table = new DataTable();
+                SqlCommand command = new SqlCommand("SELECT * FROM Login WHERE username = @username AND password= @password", db.GetConnection);
+
+                command.Parameters.Add("@username", SqlDbType.VarChar).Value = Account_txt.Text;
+                command.Parameters.Add("@password", SqlDbType.VarChar).Value = Password_txt.Text;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login successfully");
+                    Menu menu = new Menu();
+                    //this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Account or Password is wrong. Try Again!!");
+                }
             }
-            else
+            if (ra_human.Checked)
             {
-                MessageBox.Show("Account or Password is wrong. Try Again!!");
+                Mydb db = new Mydb();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                DataTable table = new DataTable();
+                SqlCommand command = new SqlCommand("SELECT * FROM Human WHERE uname = @username AND pwd= @password", db.GetConnection);
+
+                command.Parameters.Add("@username", SqlDbType.VarChar).Value = Account_txt.Text;
+                command.Parameters.Add("@password", SqlDbType.VarChar).Value = Password_txt.Text;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    MessageBox.Show("Login successfully");
+                   
+                   
+                    Globals.SetGlobalUserID(Convert.ToInt32(table.Rows[0]["ID"]));
+                    Human_User.Main a = new Human_User.Main();
+                    a.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Account or Password is wrong. Try Again!!");
+                }
             }
+
+            
 
         }
 
         private void sign_up_Click(object sender, EventArgs e)
         {
-            signup a = new signup();
-            a.Show();
+            if (ra_student.Checked)
+            {
+                signup a = new signup();
+                a.Show();
+            }
+            if (ra_human.Checked)
+            {
+                Human_User.New_User a = new Human_User.New_User();
+                a.ShowDialog();
+            }
+         
         }
     }
 }

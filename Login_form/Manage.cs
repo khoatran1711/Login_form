@@ -9,17 +9,60 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Drawing.Imaging;
 
 namespace Login_form
 {
     public partial class Manage : Form
     {
+        DataTable selected_course = new DataTable();
         public Manage()
         {
             InitializeComponent();
             ra_btn_all.Checked = true;
             List_All();
+           // MessageBox.Show(Load_course("2"));
+        }
+
+        
+
+        public string Load_course (string x)
+        {
+            string course = "";
+            string connection = "Data Source=DESKTOP-I15DKS7;Initial Catalog=Student;Integrated Security=True";
+        
+            string strSQL = @"select c.ID,c.Label from Course c JOIN grade d on c.ID = d.ID_course where d.ID_student = " + x;
+            SqlConnection Con = new SqlConnection();
+            Con.ConnectionString = connection;
+            try
+            {
+                Con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(strSQL, Con);
+                DataSet ds = new DataSet("Course");
+                da.Fill(ds, "Course");
+                DataTable dt = ds.Tables["Course"];
+               
+                for (int i=0;i<dt.Rows.Count;i++)
+                {
+                    course = course + dt.Rows[i][0] + " - " + dt.Rows[i][1] + "\n";
+                }
+                //avai = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                if (Con.State != ConnectionState.Closed)
+                {
+                    Con.Close();
+                }
+            }
+            finally
+            {
+                Con.Dispose();
+            }
+            return course;
         }
 
         void List_All ()
@@ -40,19 +83,35 @@ namespace Login_form
                 da.Fill(ds, "Student");
                 DataTable dt = ds.Tables["Student"];
 
-                list.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    list.Rows.Add(new DataGridViewRow());
+                    list.Rows[i].Height = 120;
+                    int j = 0;
+                    for ( j = 0; j < dt.Columns.Count - 1; j++)
+                    {
+                        list.Rows[i].Cells[j].Value = dt.Rows[i][j];
+                    }
+                    list.Rows[i].Cells[j].Value = dt.Rows[i][j];
+                    list.Rows[i].Cells[j + 1].Value = Load_course(dt.Rows[i][0].ToString());
+                }
+                DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+                picCol = (DataGridViewImageColumn)list.Columns[7];
+                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                /*list.DataSource = dt;
                 Total.Text = Convert.ToString(dt.Rows.Count);
                 list.Columns[0].Width = 30;
                 DataGridViewImageColumn picCol = new DataGridViewImageColumn();
                 picCol = (DataGridViewImageColumn)list.Columns[7];
-                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-               /* DataGridViewColumn col = new DataGridViewColumn();
-                col.HeaderText = "Column";
-                col.Name = "col";
-                col.Visible = true;
-                col.Width = 100;
-                col.CellTemplate = new DataGridViewTextBoxCell();
-               list.Columns.Add(col);*/
+                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+                /* DataGridViewColumn col = new DataGridViewColumn();
+                 col.HeaderText = "Column";
+                 col.Name = "col";
+                 col.Visible = true;
+                 col.Width = 100;
+                 col.CellTemplate = new DataGridViewTextBoxCell();
+                list.Columns.Add(col);*/
+
                 Con.Close();
             }
             catch (Exception ex)
@@ -133,7 +192,6 @@ namespace Login_form
             {
                 MessageBox.Show("Empty fields", "Add student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +200,7 @@ namespace Login_form
             txt_firstname.Text = list.CurrentRow.Cells[1].Value.ToString();
             txt_lastname.Text = list.CurrentRow.Cells[2].Value.ToString();
             dt_brt.Value = (DateTime)list.CurrentRow.Cells[3].Value;
+           // dt_brt.Value = DateTime.ParseExact(list.CurrentRow.Cells[3].Value.ToString(), "yyyy/M/dd:t", CultureInfo.InvariantCulture);
             if (this.list.CurrentRow.Cells[4].Value.ToString() == "Male") ra_btn_Male.Checked = true;
             if (this.list.CurrentRow.Cells[4].Value.ToString() == "Female") ra_btn_female.Checked = true;
             if (this.list.CurrentRow.Cells[4].Value.ToString() == "Other") ra_btn_other.Checked = true;
@@ -172,6 +231,8 @@ namespace Login_form
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            list.Rows.Clear();
+            list.Refresh();
             if (ra_btn_all.Checked) List_All();
             else {
                 string connection = "Data Source=DESKTOP-I15DKS7;Initial Catalog=Student;Integrated Security=True";
@@ -199,8 +260,20 @@ namespace Login_form
                     da.Fill(ds, "Student");
                     DataTable dt = ds.Tables["Student"];
 
-                    list.DataSource = dt;
-                    
+                    //list.DataSource = dt;
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        list.Rows.Add(new DataGridViewRow());
+                        list.Rows[i].Height = 120;
+                        int j = 0;
+                        for (j = 0; j < dt.Columns.Count - 1; j++)
+                        {
+                            list.Rows[i].Cells[j].Value = dt.Rows[i][j];
+                        }
+                        list.Rows[i].Cells[j].Value = dt.Rows[i][j];
+                        list.Rows[i].Cells[j + 1].Value = Load_course(dt.Rows[i][0].ToString());
+                    }
                     list.Columns[0].Width = 30;
                     DataGridViewImageColumn picCol = new DataGridViewImageColumn();
                     picCol = (DataGridViewImageColumn)list.Columns[7];

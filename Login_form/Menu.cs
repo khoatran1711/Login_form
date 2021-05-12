@@ -75,5 +75,11 @@ namespace Login_form
             Course.Edit_Course a = new Course.Edit_Course();
             a.ShowDialog();
         }
+
+        private void addScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Score.Add_score a = new Score.Add_score();
+            a.ShowDialog();
+        }
     }
 }

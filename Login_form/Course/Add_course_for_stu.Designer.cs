@@ -86,6 +86,7 @@ namespace Login_form.Course
             this.label3.Size = new System.Drawing.Size(89, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Semester";
+            this.label3.Visible = false;
             // 
             // comboBox1
             // 
@@ -103,6 +104,7 @@ namespace Login_form.Course
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.Visible = false;
             // 
             // btn_add
             // 

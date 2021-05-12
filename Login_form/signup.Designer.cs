@@ -175,7 +175,7 @@ namespace Login_form
             this.btn_Confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Confirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Confirm.FlatAppearance.BorderSize = 0;
-            this.btn_Confirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_Confirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_Confirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

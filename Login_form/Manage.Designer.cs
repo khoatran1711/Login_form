@@ -29,6 +29,7 @@ namespace Login_form
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_add_picture = new System.Windows.Forms.Button();
             this.pic_box = new System.Windows.Forms.PictureBox();
@@ -62,6 +63,15 @@ namespace Login_form
             this.ra_btn_all = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.Total = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Selected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pic_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list)).BeginInit();
@@ -292,6 +302,16 @@ namespace Login_form
             this.list.AllowUserToAddRows = false;
             this.list.AllowUserToDeleteRows = false;
             this.list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Fname,
+            this.name,
+            this.bday,
+            this.Gender,
+            this.Phone,
+            this.Address,
+            this.Picture,
+            this.Selected});
             this.list.Location = new System.Drawing.Point(546, 98);
             this.list.Name = "list";
             this.list.ReadOnly = true;
@@ -299,7 +319,7 @@ namespace Login_form
             this.list.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.list.RowTemplate.Height = 100;
             this.list.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.list.Size = new System.Drawing.Size(769, 525);
+            this.list.Size = new System.Drawing.Size(925, 525);
             this.list.TabIndex = 44;
             this.list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -436,11 +456,84 @@ namespace Login_form
             this.Total.Size = new System.Drawing.Size(0, 17);
             this.Total.TabIndex = 56;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 50;
+            // 
+            // Fname
+            // 
+            this.Fname.HeaderText = "Fisrt Name";
+            this.Fname.MinimumWidth = 6;
+            this.Fname.Name = "Fname";
+            this.Fname.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Last Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // bday
+            // 
+            this.bday.HeaderText = "Brithday";
+            this.bday.MinimumWidth = 6;
+            this.bday.Name = "bday";
+            this.bday.ReadOnly = true;
+            this.bday.Width = 150;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 75;
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone";
+            this.Phone.MinimumWidth = 6;
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            this.Phone.Width = 125;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Adddess";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // Picture
+            // 
+            this.Picture.HeaderText = "Picture";
+            this.Picture.MinimumWidth = 6;
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            this.Picture.Width = 125;
+            // 
+            // Selected
+            // 
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Selected.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Selected.HeaderText = "Selected Course";
+            this.Selected.MinimumWidth = 6;
+            this.Selected.Name = "Selected";
+            this.Selected.ReadOnly = true;
+            this.Selected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Selected.Width = 125;
+            // 
             // Manage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 635);
+            this.ClientSize = new System.Drawing.Size(1499, 635);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ra_btn_all);
@@ -519,5 +612,14 @@ namespace Login_form
         private System.Windows.Forms.RadioButton ra_btn_all;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewImageColumn Picture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Selected;
     }
 }

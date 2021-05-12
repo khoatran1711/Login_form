@@ -28,7 +28,7 @@ namespace Login_form.Course
             string connection = "Data Source=DESKTOP-I15DKS7;Initial Catalog=Student;Integrated Security=True";
             string ab = txt_id.Text;
             string strSQL2 = @"select c.ID,c.Label from Course c Except select c.ID,c.Label from Course c JOIN  grade d on c.ID = d.ID_course where d.ID_student ="+txt_id.Text;
-            string strSQL = @"select c.ID,c.Label from Course c JOIN grade d on c.ID = d.ID_course where d.ID_student = " + txt_id.Text;
+            string strSQL = @"select c.ID,c.Label,d.Grade from Course c JOIN grade d on c.ID = d.ID_course where d.ID_student = " + txt_id.Text;
             SqlConnection Con = new SqlConnection();
             Con.ConnectionString = connection;
             try
@@ -162,7 +162,7 @@ namespace Login_form.Course
             }
         }
 
-        private void btn_remove_Click(object sender, EventArgs e)
+        public void Remove ()
         {
             for (int i = 0; i < avai_couse.Items.Count; i++)
             {
@@ -180,6 +180,43 @@ namespace Login_form.Course
             {
                 select_course.Items.Add(select.Rows[i][0] + " - " + select.Rows[i][1]);
             }
+        }
+
+        public bool Check ()
+        {
+            for (int d=0;d<avai.Rows.Count;d++)
+            {
+                if (avai_couse.GetItemChecked(d) == true && avai.Rows[d][2] != null) return false;
+            }
+            return true;
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            if (Check())
+            {
+                if (MessageBox.Show("Are you sure you want to remove this course from this student ?", "Change Course", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Remove();
+                    MessageBox.Show("DONE", "Change Course ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("FAIL TO REMOVE", "Change Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("This course(s) has information, are you still want you remove ?", "Change Course", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Remove();
+                    MessageBox.Show("DONE", "Change Course ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("FAIL TO REMOVE", "Change Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+           
         }
     }
 }
