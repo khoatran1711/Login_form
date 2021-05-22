@@ -16,5 +16,11 @@ namespace NhaHang
         {
             InitializeComponent();
         }
+
+        private void addFoodButton_Click(object sender, EventArgs e)
+        {
+            FoodDrink.addFoodForm af = new FoodDrink.addFoodForm();
+            af.ShowDialog();
+        }
     }
 }

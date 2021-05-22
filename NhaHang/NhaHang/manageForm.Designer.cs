@@ -76,6 +76,7 @@ namespace NhaHang
             this.addFoodButton.TabIndex = 0;
             this.addFoodButton.Text = "Add";
             this.addFoodButton.UseVisualStyleBackColor = true;
+            this.addFoodButton.Click += new System.EventHandler(this.addFoodButton_Click);
             // 
             // manageForm
             // 
