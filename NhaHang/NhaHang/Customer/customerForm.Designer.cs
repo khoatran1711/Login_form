@@ -29,203 +29,159 @@ namespace NhaHang.Customer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customerForm));
             this.customerTabControl = new System.Windows.Forms.TabControl();
             this.FDtabPage = new System.Windows.Forms.TabPage();
-            this.tableTabPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.table1 = new System.Windows.Forms.Label();
-            this.table2 = new System.Windows.Forms.Label();
-            this.table3 = new System.Windows.Forms.Label();
-            this.table4 = new System.Windows.Forms.Label();
-            this.table5 = new System.Windows.Forms.Label();
-            this.table6 = new System.Windows.Forms.Label();
-            this.table7 = new System.Windows.Forms.Label();
+            this.okButton = new System.Windows.Forms.Button();
+            this.amountNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fNameTextBox = new System.Windows.Forms.TextBox();
+            this.codefePicture = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.foodDataGridView = new System.Windows.Forms.DataGridView();
+            this.tableTabPage = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.table7 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.table6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.table5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.table4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.table3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.table2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.table1 = new System.Windows.Forms.Label();
+            this.billTabPage = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tableComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.customerNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.orderButton = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.orderDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.customerTabControl.SuspendLayout();
             this.FDtabPage.SuspendLayout();
-            this.tableTabPage.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codefePicture)).BeginInit();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foodDataGridView)).BeginInit();
+            this.tableTabPage.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerNumericUpDown)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // customerTabControl
             // 
             this.customerTabControl.Controls.Add(this.FDtabPage);
             this.customerTabControl.Controls.Add(this.tableTabPage);
+            this.customerTabControl.Controls.Add(this.billTabPage);
             this.customerTabControl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerTabControl.Location = new System.Drawing.Point(9, 9);
+            this.customerTabControl.Location = new System.Drawing.Point(10, 9);
             this.customerTabControl.Name = "customerTabControl";
             this.customerTabControl.SelectedIndex = 0;
-            this.customerTabControl.Size = new System.Drawing.Size(1253, 552);
+            this.customerTabControl.Size = new System.Drawing.Size(1307, 739);
             this.customerTabControl.TabIndex = 0;
             // 
             // FDtabPage
             // 
+            this.FDtabPage.Controls.Add(this.panel10);
+            this.FDtabPage.Controls.Add(this.panel9);
+            this.FDtabPage.Controls.Add(this.codefePicture);
+            this.FDtabPage.Controls.Add(this.panel8);
             this.FDtabPage.Controls.Add(this.foodDataGridView);
             this.FDtabPage.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FDtabPage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FDtabPage.Location = new System.Drawing.Point(4, 29);
             this.FDtabPage.Name = "FDtabPage";
             this.FDtabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FDtabPage.Size = new System.Drawing.Size(1245, 519);
+            this.FDtabPage.Size = new System.Drawing.Size(1299, 706);
             this.FDtabPage.TabIndex = 0;
-            this.FDtabPage.Text = "Food&Drink";
+            this.FDtabPage.Text = "Order";
             this.FDtabPage.UseVisualStyleBackColor = true;
             // 
-            // tableTabPage
+            // okButton
             // 
-            this.tableTabPage.Controls.Add(this.panel7);
-            this.tableTabPage.Controls.Add(this.panel6);
-            this.tableTabPage.Controls.Add(this.panel5);
-            this.tableTabPage.Controls.Add(this.panel4);
-            this.tableTabPage.Controls.Add(this.panel3);
-            this.tableTabPage.Controls.Add(this.panel2);
-            this.tableTabPage.Controls.Add(this.panel1);
-            this.tableTabPage.Location = new System.Drawing.Point(4, 29);
-            this.tableTabPage.Name = "tableTabPage";
-            this.tableTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tableTabPage.Size = new System.Drawing.Size(1186, 519);
-            this.tableTabPage.TabIndex = 1;
-            this.tableTabPage.Text = "Table";
-            this.tableTabPage.UseVisualStyleBackColor = true;
+            this.okButton.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.okButton.Location = new System.Drawing.Point(351, 55);
+            this.okButton.Name = "okButton";
+            this.okButton.Size = new System.Drawing.Size(87, 36);
+            this.okButton.TabIndex = 6;
+            this.okButton.Text = "OK";
+            this.okButton.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // amountNumericUpDown
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.table1);
-            this.panel1.Location = new System.Drawing.Point(6, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(523, 99);
-            this.panel1.TabIndex = 0;
+            this.amountNumericUpDown.Location = new System.Drawing.Point(260, 56);
+            this.amountNumericUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.amountNumericUpDown.Name = "amountNumericUpDown";
+            this.amountNumericUpDown.Size = new System.Drawing.Size(69, 28);
+            this.amountNumericUpDown.TabIndex = 5;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.table2);
-            this.panel2.Location = new System.Drawing.Point(6, 141);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(523, 99);
-            this.panel2.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(256, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 22);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Amount";
             // 
-            // panel3
+            // label1
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.table3);
-            this.panel3.Location = new System.Drawing.Point(6, 276);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(523, 99);
-            this.panel3.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(87, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
             // 
-            // panel4
+            // fNameTextBox
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.table4);
-            this.panel4.Location = new System.Drawing.Point(6, 395);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(523, 99);
-            this.panel4.TabIndex = 0;
+            this.fNameTextBox.Location = new System.Drawing.Point(6, 55);
+            this.fNameTextBox.Multiline = true;
+            this.fNameTextBox.Name = "fNameTextBox";
+            this.fNameTextBox.Size = new System.Drawing.Size(233, 37);
+            this.fNameTextBox.TabIndex = 3;
             // 
-            // panel5
+            // codefePicture
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.table5);
-            this.panel5.Location = new System.Drawing.Point(625, 17);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(116, 477);
-            this.panel5.TabIndex = 0;
+            this.codefePicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("codefePicture.BackgroundImage")));
+            this.codefePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.codefePicture.Location = new System.Drawing.Point(1148, 3);
+            this.codefePicture.Name = "codefePicture";
+            this.codefePicture.Size = new System.Drawing.Size(145, 127);
+            this.codefePicture.TabIndex = 1;
+            this.codefePicture.TabStop = false;
             // 
-            // panel6
+            // panel8
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.table6);
-            this.panel6.Location = new System.Drawing.Point(799, 17);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(116, 477);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.table7);
-            this.panel7.Location = new System.Drawing.Point(972, 17);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(116, 477);
-            this.panel7.TabIndex = 0;
-            // 
-            // table1
-            // 
-            this.table1.AutoSize = true;
-            this.table1.Location = new System.Drawing.Point(205, 40);
-            this.table1.Name = "table1";
-            this.table1.Size = new System.Drawing.Size(19, 20);
-            this.table1.TabIndex = 0;
-            this.table1.Text = "1";
-            // 
-            // table2
-            // 
-            this.table2.AutoSize = true;
-            this.table2.Location = new System.Drawing.Point(205, 41);
-            this.table2.Name = "table2";
-            this.table2.Size = new System.Drawing.Size(19, 20);
-            this.table2.TabIndex = 0;
-            this.table2.Text = "2";
-            // 
-            // table3
-            // 
-            this.table3.AutoSize = true;
-            this.table3.Location = new System.Drawing.Point(205, 45);
-            this.table3.Name = "table3";
-            this.table3.Size = new System.Drawing.Size(19, 20);
-            this.table3.TabIndex = 0;
-            this.table3.Text = "3";
-            // 
-            // table4
-            // 
-            this.table4.AutoSize = true;
-            this.table4.Location = new System.Drawing.Point(205, 55);
-            this.table4.Name = "table4";
-            this.table4.Size = new System.Drawing.Size(19, 20);
-            this.table4.TabIndex = 0;
-            this.table4.Text = "4";
-            // 
-            // table5
-            // 
-            this.table5.AutoSize = true;
-            this.table5.Location = new System.Drawing.Point(21, 202);
-            this.table5.Name = "table5";
-            this.table5.Size = new System.Drawing.Size(19, 20);
-            this.table5.TabIndex = 0;
-            this.table5.Text = "5";
-            // 
-            // table6
-            // 
-            this.table6.AutoSize = true;
-            this.table6.Location = new System.Drawing.Point(26, 202);
-            this.table6.Name = "table6";
-            this.table6.Size = new System.Drawing.Size(19, 20);
-            this.table6.TabIndex = 0;
-            this.table6.Text = "6";
-            // 
-            // table7
-            // 
-            this.table7.AutoSize = true;
-            this.table7.Location = new System.Drawing.Point(29, 202);
-            this.table7.Name = "table7";
-            this.table7.Size = new System.Drawing.Size(19, 20);
-            this.table7.TabIndex = 0;
-            this.table7.Text = "7";
+            this.panel8.BackColor = System.Drawing.Color.SandyBrown;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.orderDataGridView);
+            this.panel8.Location = new System.Drawing.Point(690, 136);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(603, 466);
+            this.panel8.TabIndex = 2;
             // 
             // foodDataGridView
             // 
@@ -239,35 +195,314 @@ namespace NhaHang.Customer
             this.foodDataGridView.Name = "foodDataGridView";
             this.foodDataGridView.RowHeadersWidth = 51;
             this.foodDataGridView.RowTemplate.Height = 120;
-            this.foodDataGridView.Size = new System.Drawing.Size(673, 504);
+            this.foodDataGridView.Size = new System.Drawing.Size(673, 674);
             this.foodDataGridView.TabIndex = 0;
+            // 
+            // tableTabPage
+            // 
+            this.tableTabPage.Controls.Add(this.panel7);
+            this.tableTabPage.Controls.Add(this.panel6);
+            this.tableTabPage.Controls.Add(this.panel5);
+            this.tableTabPage.Controls.Add(this.panel4);
+            this.tableTabPage.Controls.Add(this.panel3);
+            this.tableTabPage.Controls.Add(this.panel2);
+            this.tableTabPage.Controls.Add(this.panel1);
+            this.tableTabPage.Location = new System.Drawing.Point(4, 29);
+            this.tableTabPage.Name = "tableTabPage";
+            this.tableTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.tableTabPage.Size = new System.Drawing.Size(1299, 706);
+            this.tableTabPage.TabIndex = 1;
+            this.tableTabPage.Text = "Table";
+            this.tableTabPage.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.table7);
+            this.panel7.Location = new System.Drawing.Point(972, 17);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(116, 477);
+            this.panel7.TabIndex = 0;
+            // 
+            // table7
+            // 
+            this.table7.AutoSize = true;
+            this.table7.Location = new System.Drawing.Point(29, 202);
+            this.table7.Name = "table7";
+            this.table7.Size = new System.Drawing.Size(19, 20);
+            this.table7.TabIndex = 0;
+            this.table7.Text = "7";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.table6);
+            this.panel6.Location = new System.Drawing.Point(799, 17);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(116, 477);
+            this.panel6.TabIndex = 0;
+            // 
+            // table6
+            // 
+            this.table6.AutoSize = true;
+            this.table6.Location = new System.Drawing.Point(26, 202);
+            this.table6.Name = "table6";
+            this.table6.Size = new System.Drawing.Size(19, 20);
+            this.table6.TabIndex = 0;
+            this.table6.Text = "6";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.table5);
+            this.panel5.Location = new System.Drawing.Point(625, 17);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(116, 477);
+            this.panel5.TabIndex = 0;
+            // 
+            // table5
+            // 
+            this.table5.AutoSize = true;
+            this.table5.Location = new System.Drawing.Point(21, 202);
+            this.table5.Name = "table5";
+            this.table5.Size = new System.Drawing.Size(19, 20);
+            this.table5.TabIndex = 0;
+            this.table5.Text = "5";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.table4);
+            this.panel4.Location = new System.Drawing.Point(6, 395);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(523, 99);
+            this.panel4.TabIndex = 0;
+            // 
+            // table4
+            // 
+            this.table4.AutoSize = true;
+            this.table4.Location = new System.Drawing.Point(205, 55);
+            this.table4.Name = "table4";
+            this.table4.Size = new System.Drawing.Size(19, 20);
+            this.table4.TabIndex = 0;
+            this.table4.Text = "4";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.table3);
+            this.panel3.Location = new System.Drawing.Point(6, 276);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(523, 99);
+            this.panel3.TabIndex = 0;
+            // 
+            // table3
+            // 
+            this.table3.AutoSize = true;
+            this.table3.Location = new System.Drawing.Point(205, 45);
+            this.table3.Name = "table3";
+            this.table3.Size = new System.Drawing.Size(19, 20);
+            this.table3.TabIndex = 0;
+            this.table3.Text = "3";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.table2);
+            this.panel2.Location = new System.Drawing.Point(6, 141);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(523, 99);
+            this.panel2.TabIndex = 0;
+            // 
+            // table2
+            // 
+            this.table2.AutoSize = true;
+            this.table2.Location = new System.Drawing.Point(205, 41);
+            this.table2.Name = "table2";
+            this.table2.Size = new System.Drawing.Size(19, 20);
+            this.table2.TabIndex = 0;
+            this.table2.Text = "2";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.table1);
+            this.panel1.Location = new System.Drawing.Point(6, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(523, 99);
+            this.panel1.TabIndex = 0;
+            // 
+            // table1
+            // 
+            this.table1.AutoSize = true;
+            this.table1.Location = new System.Drawing.Point(205, 40);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(19, 20);
+            this.table1.TabIndex = 0;
+            this.table1.Text = "1";
+            // 
+            // billTabPage
+            // 
+            this.billTabPage.Location = new System.Drawing.Point(4, 29);
+            this.billTabPage.Name = "billTabPage";
+            this.billTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.billTabPage.Size = new System.Drawing.Size(1258, 580);
+            this.billTabPage.TabIndex = 2;
+            this.billTabPage.Text = "Your Bill";
+            this.billTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 22);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Table";
+            // 
+            // tableComboBox
+            // 
+            this.tableComboBox.FormattingEnabled = true;
+            this.tableComboBox.Location = new System.Drawing.Point(64, 5);
+            this.tableComboBox.Name = "tableComboBox";
+            this.tableComboBox.Size = new System.Drawing.Size(69, 29);
+            this.tableComboBox.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 22);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Date";
+            // 
+            // dateDateTimePicker
+            // 
+            this.dateDateTimePicker.Location = new System.Drawing.Point(64, 46);
+            this.dateDateTimePicker.Name = "dateDateTimePicker";
+            this.dateDateTimePicker.Size = new System.Drawing.Size(374, 28);
+            this.dateDateTimePicker.TabIndex = 8;
+            // 
+            // customerNumericUpDown
+            // 
+            this.customerNumericUpDown.Location = new System.Drawing.Point(380, 6);
+            this.customerNumericUpDown.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.customerNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.customerNumericUpDown.Name = "customerNumericUpDown";
+            this.customerNumericUpDown.Size = new System.Drawing.Size(58, 28);
+            this.customerNumericUpDown.TabIndex = 5;
+            this.customerNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(139, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(211, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "The number of Customer";
+            // 
+            // orderButton
+            // 
+            this.orderButton.BackColor = System.Drawing.Color.Sienna;
+            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.orderButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.orderButton.Location = new System.Drawing.Point(453, 8);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(145, 60);
+            this.orderButton.TabIndex = 9;
+            this.orderButton.Text = "ORDER";
+            this.orderButton.UseVisualStyleBackColor = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.orderButton);
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Controls.Add(this.customerNumericUpDown);
+            this.panel9.Controls.Add(this.dateDateTimePicker);
+            this.panel9.Controls.Add(this.tableComboBox);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Controls.Add(this.label4);
+            this.panel9.Location = new System.Drawing.Point(690, 603);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(603, 84);
+            this.panel9.TabIndex = 10;
+            // 
+            // orderDataGridView
+            // 
+            this.orderDataGridView.BackgroundColor = System.Drawing.Color.SeaShell;
+            this.orderDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderDataGridView.Location = new System.Drawing.Point(22, 18);
+            this.orderDataGridView.Name = "orderDataGridView";
+            this.orderDataGridView.RowHeadersWidth = 51;
+            this.orderDataGridView.RowTemplate.Height = 24;
+            this.orderDataGridView.Size = new System.Drawing.Size(558, 427);
+            this.orderDataGridView.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.okButton);
+            this.panel10.Controls.Add(this.amountNumericUpDown);
+            this.panel10.Controls.Add(this.label2);
+            this.panel10.Controls.Add(this.label1);
+            this.panel10.Controls.Add(this.fNameTextBox);
+            this.panel10.Location = new System.Drawing.Point(690, 14);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(454, 115);
+            this.panel10.TabIndex = 11;
             // 
             // customerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 565);
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.ClientSize = new System.Drawing.Size(1329, 755);
             this.Controls.Add(this.customerTabControl);
             this.Name = "customerForm";
             this.Text = "customerForm";
             this.customerTabControl.ResumeLayout(false);
             this.FDtabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.amountNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.codefePicture)).EndInit();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foodDataGridView)).EndInit();
             this.tableTabPage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foodDataGridView)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerNumericUpDown)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +527,23 @@ namespace NhaHang.Customer
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label table1;
         private System.Windows.Forms.DataGridView foodDataGridView;
+        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.NumericUpDown amountNumericUpDown;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox fNameTextBox;
+        private System.Windows.Forms.PictureBox codefePicture;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button orderButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown customerNumericUpDown;
+        private System.Windows.Forms.DateTimePicker dateDateTimePicker;
+        private System.Windows.Forms.ComboBox tableComboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage billTabPage;
+        private System.Windows.Forms.DataGridView orderDataGridView;
+        private System.Windows.Forms.Panel panel10;
     }
 }
