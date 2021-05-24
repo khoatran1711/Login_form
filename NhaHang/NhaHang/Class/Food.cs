@@ -14,7 +14,7 @@ namespace NhaHang.Class
         MYDB mydb = new MYDB();
 
         //them mon an
-        public bool insertUser(int id, string fname, MemoryStream picture, int amount, int cost)
+        public bool insertFood(int id, string fname, MemoryStream picture, int amount, int cost)
         {
             SqlCommand cmd = new SqlCommand("insert into FoodDrink (id, pic,fname,famount,fcost) values (@id,@pic,@fn,@amt,@cost)", mydb.getConnection);
 
@@ -66,17 +66,14 @@ namespace NhaHang.Class
 
             return table;
         }
-        //cap nhat user
-        public bool updateUser(int userid, string fname, string lname, string username, string password, MemoryStream picture)
+        //cap nhat so luong
+        public bool updateUser(int fid,int famount)
         {
-            SqlCommand cmd = new SqlCommand("update hr set f_name = @fn, l_name = @ln, uname = @un, pwd = @pass, fig = @pic where id =@uid", mydb.getConnection);
-
-            cmd.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
-            cmd.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
-            cmd.Parameters.Add("@un", SqlDbType.VarChar).Value = username;
-            cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = password;
-            cmd.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
-            cmd.Parameters.Add("@uid", SqlDbType.Int).Value = userid;
+            int sl = fAmount(fid);
+            sl = sl - famount;
+            SqlCommand cmd = new SqlCommand("update FoodDrink set famount = @sl  where id = @fid", mydb.getConnection);
+            cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
+            cmd.Parameters.Add("@sl", SqlDbType.Int).Value = sl;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
@@ -89,6 +86,34 @@ namespace NhaHang.Class
                 mydb.closeConnection();
                 return false;
             }
+        }
+        //lay so luong
+        public int fAmount(int fid)
+        {
+            int sl = 0;
+            SqlCommand command = new SqlCommand("Select famount from FoodDrink where id = @fid", mydb.getConnection);
+            command.Parameters.Add("@fid",SqlDbType.Int).Value = fid;
+            mydb.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            sl = (int)table.Rows[0]["famount"];
+            return sl;
+        }
+        //lay gia
+        public int fCost(int fid)
+        {
+            int gia = 0;
+            SqlCommand command = new SqlCommand("Select fcost from FoodDrink where id = @fid", mydb.getConnection);
+            command.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
+            mydb.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            gia = (int)table.Rows[0]["fcost"];
+            return gia;
         }
     }
 }

@@ -47,7 +47,7 @@ namespace NhaHang.FoodDrink
                         if (food.foodExist(fname) == false)
                         {
                             foodPictureBox.Image.Save(pic, foodPictureBox.Image.RawFormat);
-                            if (food.insertUser(id, fname, pic, amount,cost))
+                            if (food.insertFood(id, fname, pic, amount,cost))
                             {
                                 MessageBox.Show("New food added successfully!", "Add food", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Class\Food.cs" />
     <Compile Include="Class\MYDB.cs" />
+    <Compile Include="Class\Order.cs" />
+    <Compile Include="Class\Table.cs" />
     <Compile Include="Customer\customerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +114,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Image\addfood.png" />
+    <Content Include="Image\codefelogo.png" />
+    <None Include="Resources\Screenshot 2021-05-22 135651.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
