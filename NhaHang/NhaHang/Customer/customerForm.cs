@@ -17,6 +17,7 @@ namespace NhaHang.Customer
     {
         Class.Food food = new Class.Food();
         Class.Order order = new Class.Order();
+        Class.Table tb = new Class.Table();
         int oid;
 
         public customerForm()
@@ -25,8 +26,10 @@ namespace NhaHang.Customer
             oid = order.oID();
             oid++;
             loadData();
+            loadTable();
 
         }
+        //hien du lieu
         public void loadData()
         {
             foodDataGridView.DataSource = food.getAllFood();
@@ -66,6 +69,21 @@ namespace NhaHang.Customer
         private void orderDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             this.orderDataGridView.DefaultCellStyle.Font = new Font("VNI-Zap", 14);
+            for(int i = 0;i<orderDataGridView.Rows.Count;i++)
+            {
+                orderDataGridView.Rows[i].DefaultCellStyle.BackColor = Color.SeaShell;
+            }
+        }
+        //hien trang thai ban
+        public void loadTable()
+        {
+            table1.Text = "Table 1: "+ tb.slotTable(1) + "seat(s) left";
+            table2.Text = "Table 2: " + tb.slotTable(2) + "seat(s) left";
+            table3.Text = "Table 3: " + tb.slotTable(3) + "seat(s) left";
+            table4.Text = "Table 4: " + tb.slotTable(4) + "seat(s) left";
+            table5.Text = "Table 5: " + tb.slotTable(5) + "seat(s) left";
+            table6.Text = "Table 6: " + tb.slotTable(6) + "seat(s) left";
+            table7.Text = "Table 7: " + tb.slotTable(7) + "seat(s) left";
         }
         //chon mon
         private void foodDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
