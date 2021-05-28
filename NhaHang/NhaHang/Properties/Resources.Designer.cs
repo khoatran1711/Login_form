@@ -79,5 +79,15 @@ namespace NhaHang.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2021_05_25_114859 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2021-05-25 114859", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

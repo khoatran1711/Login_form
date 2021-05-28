@@ -98,7 +98,7 @@ namespace NhaHang.Class
             adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            sl = (int)table.Rows[0]["famount"];
+            sl = Convert.ToInt32(table.Rows[0]["famount"]);
             return sl;
         }
         //lay gia
@@ -112,7 +112,7 @@ namespace NhaHang.Class
             adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            gia = (int)table.Rows[0]["fcost"];
+            gia = Convert.ToInt32(table.Rows[0]["fcost"]);
             return gia;
         }
     }

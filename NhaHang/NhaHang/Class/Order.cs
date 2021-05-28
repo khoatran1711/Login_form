@@ -59,5 +59,21 @@ namespace NhaHang.Class
                 return false;
             }
         }
+        //lay tong gia
+        public int totalCost(int tid)
+        {
+            int total = 0;
+
+            SqlCommand command = new SqlCommand("SELECT sum(fcost) as 'total' FROM Orders where id = @id", mydb.getConnection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = tid;
+            mydb.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            total = Convert.ToInt32(table.Rows[0]["total"]);
+
+            return total;
+        }
     }
 }

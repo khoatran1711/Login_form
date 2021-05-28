@@ -34,15 +34,27 @@ namespace NhaHang.Class
         public int slotTable(int tid)
         {
             int slot = 0;
-            SqlCommand command = new SqlCommand("select numCustomer from Tables where id = @tid", mydb.getConnection);
+            SqlCommand command = new SqlCommand("select slot from Tables where id = @tid", mydb.getConnection);
             command.Parameters.Add("@tid", SqlDbType.Int).Value = tid;
             mydb.openConnection();
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            slot = (int)table.Rows[0]["numCustomer"];
+            slot = (int)table.Rows[0]["slot"];
             return slot;
+        }
+        //hien thi so ban con kha dung
+        public DataTable getTables()
+        {
+            SqlCommand command = new SqlCommand("select * from tables where slot > 0", mydb.getConnection);
+            mydb.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            return table;
         }
     }
 }
