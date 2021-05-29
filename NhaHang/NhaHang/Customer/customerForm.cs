@@ -29,6 +29,11 @@ namespace NhaHang.Customer
             oid++;
             loadData();
             loadTable();
+            tableComboBox.DataSource = tb.getTables();
+            tableComboBox.DisplayMember = "id";
+            tableComboBox.ValueMember = "id";
+            tableComboBox.SelectedItem = null;
+            checkOutButton.Visible = false;
 
         }
         //hien du lieu
@@ -49,15 +54,12 @@ namespace NhaHang.Customer
             orderDataGridView.RowHeadersVisible = false;
             orderDataGridView.Columns[0].Width = 190;
             orderDataGridView.Columns[1].Width = 85;
-            orderDataGridView.Columns[2].Width = 165;
+            orderDataGridView.Columns[2].Width = 155;
+            orderDataGridView.Columns[3].Width = 0;
 
             dateDateTimePicker.Format = DateTimePickerFormat.Custom;
             dateDateTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
 
-            tableComboBox.DataSource = tb.getTables();
-            tableComboBox.DisplayMember = "id";
-            tableComboBox.ValueMember = "id";
-            tableComboBox.SelectedItem = null;
         }
         //format datagridview
         private void foodDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -112,13 +114,50 @@ namespace NhaHang.Customer
         
         private void okButton_Click(object sender, EventArgs e)
         {
-            int id = oid;
-            int fid = (int)foodDataGridView.CurrentRow.Cells[0].Value;
-            string fname = fNameTextBox.Text;
-            int famount = (int)amountNumericUpDown.Value;
-            int fcost = food.fCost(fid) * famount;
-            order.insertOrder(id,fid,fname,famount,fcost);
-            loadData();
+            if (fNameTextBox.Text == null)
+            {
+                MessageBox.Show("Please choose a drink");
+            }
+            else
+            {
+                if ((food.fAmount((int)foodDataGridView.CurrentRow.Cells[0].Value)- (int)amountNumericUpDown.Value)<0)
+                {
+                    MessageBox.Show("Order Error! Currently not enough quantity requested :(","Order",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else
+                {   
+                    int id = oid;
+                    int fid = (int)foodDataGridView.CurrentRow.Cells[0].Value;
+                    string fname = fNameTextBox.Text;
+                    int famount = (int)amountNumericUpDown.Value;
+                    int fcost = food.fCost(fid) * famount;
+                    order.insertOrder(id, fid, fname, famount, fcost);
+                    food.updateFAmount(fid,(food.fAmount((int)foodDataGridView.CurrentRow.Cells[0].Value) - (int)amountNumericUpDown.Value));
+                    loadData();
+                }
+            }
+
+        }
+        //xoa mon
+        private void orderDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((MessageBox.Show("Are you sure you want to delete this Drink?", "Delete drink", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            {
+                if (order.deleteOrder(oid, Convert.ToInt32(orderDataGridView.CurrentRow.Cells[3].Value)))
+                {
+                    
+                    MessageBox.Show("Deleted", "Delete drink", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int fid = Convert.ToInt32(orderDataGridView.CurrentRow.Cells[3].Value);
+                    int famount = Convert.ToInt32(orderDataGridView.CurrentRow.Cells[1].Value);
+                    food.updateFAmount(fid,famount);
+                    //refresh datagridview
+                    {
+                        
+                        loadData();
+                    }
+                }
+            }
+        
         }
         //xac nhan order
         //load bill
@@ -135,22 +174,51 @@ namespace NhaHang.Customer
         }
         private void orderButton_Click(object sender, EventArgs e)
         {
+            int checkSlot = tb.slotTable(Convert.ToInt32(tableComboBox.Text)) - Convert.ToInt32(customerNumericUpDown.Text);
+            if (checkSlot < 0)
+            {
+                MessageBox.Show("Sorry, there are not enough seats at this table now :(");
+            }
+            else
+            {
+                int tid = Convert.ToInt32(tableComboBox.Text); 
+                tb.updateTableStatus(tid, checkSlot);
+                checkOutButton.Visible = true;
+                if (orderDataGridView.Rows.Count == 0)
+                {
+                    MessageBox.Show("Please choose what you want to use");
+                }
+                else
+                {
+                    if (tableComboBox.Text == null)
+                    {
+                        MessageBox.Show("Please choose where you are");
+                    }
+                    else
+                    {
+                        loadBill();
+                        costLabel.Text = order.totalCost(oid).ToString();
+                        tableBillTextBox.Text = tableComboBox.Text;
+                        dayTextBox.Text = dateDateTimePicker.Text;
+                        cusNumTextBox.Text = customerNumericUpDown.Value.ToString();
+                        loadTable();
 
-            loadBill();
-
-            costLabel.Text = order.totalCost(oid).ToString();
-
-            tableBillTextBox.Text = tableComboBox.Text;
-            dayTextBox.Text = dateDateTimePicker.Text;
-            cusNumTextBox.Text = customerNumericUpDown.Value.ToString();
-
-            MessageBox.Show("Order Successfully!!!<3");
+                        MessageBox.Show("Order Successfully!!!<3");
+                    }
+                }
+            }
         }
         //thanh toan hoa don
         private void payButton_Click(object sender, EventArgs e)
         {
+            int tid = Convert.ToInt32(tableBillTextBox.Text);
+            int cusNum = Convert.ToInt32(cusNumTextBox.Text);
+            string day = dayTextBox.Text;
+            int total = Convert.ToInt32(costLabel.Text);
             SavetoWord();
-            bill.saveBill(oid,Convert.ToInt32(tableBillTextBox.Text),Convert.ToInt32(cusNumTextBox.Text),dayTextBox.Text,Convert.ToInt32(costLabel.Text));
+            bill.saveBill(oid,tid,cusNum,day,total);
+            tb.updateTableStatus(tid,cusNum+tb.slotTable(tid));
+            loadTable();
         }
 
 
@@ -269,5 +337,7 @@ namespace NhaHang.Customer
                 MessageBox.Show("No Record To Export !!!", "Info");
             }
         }
+
+    
     }
 }

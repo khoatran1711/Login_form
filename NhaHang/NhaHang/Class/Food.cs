@@ -36,6 +36,47 @@ namespace NhaHang.Class
                 return false;
             }
         }
+        //chinh sua mon an
+        public bool editFood(int id, string fname, MemoryStream picture, int amount, int cost)
+        {
+            SqlCommand cmd = new SqlCommand("update FoodDrink set pic = @pic,fname=@fn,famount=@amt,fcost=@cost where id = @id", mydb.getConnection);
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
+            cmd.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
+            cmd.Parameters.Add("@amt", SqlDbType.Int).Value = amount;
+            cmd.Parameters.Add("@cost", SqlDbType.BigInt).Value = cost;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        //xoa mon an
+        public bool deleteFood(int id)
+        {
+            SqlCommand cmd = new SqlCommand("delete from FoodDrink where id = @id", mydb.getConnection);
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
         //kiem tra trung
         public bool foodExist(string name)
         {
@@ -67,25 +108,46 @@ namespace NhaHang.Class
             return table;
         }
         //cap nhat so luong
-        public bool updateUser(int fid,int famount)
+        public bool updateFAmount(int fid,int famount)
         {
-            int sl = fAmount(fid);
-            sl = sl - famount;
-            SqlCommand cmd = new SqlCommand("update FoodDrink set famount = @sl  where id = @fid", mydb.getConnection);
-            cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
-            cmd.Parameters.Add("@sl", SqlDbType.Int).Value = sl;
-
-            mydb.openConnection();
-            if (cmd.ExecuteNonQuery() == 1)
+            if (famount == 0)
             {
-                mydb.closeConnection();
-                return true;
+                SqlCommand cmd = new SqlCommand("update FoodDrink set famount = @sl, fstatus = @fst where id = @fid", mydb.getConnection);
+                cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
+                cmd.Parameters.Add("@sl", SqlDbType.Int).Value = famount;
+                cmd.Parameters.Add("@fst", SqlDbType.VarChar).Value = "Sold out";
+                mydb.openConnection();
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    mydb.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
             }
             else
             {
-                mydb.closeConnection();
-                return false;
+                SqlCommand cmd = new SqlCommand("update FoodDrink set famount = @sl, fstatus = @fst where id = @fid", mydb.getConnection);
+                cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
+                cmd.Parameters.Add("@sl", SqlDbType.Int).Value = famount;
+                cmd.Parameters.Add("@fst", SqlDbType.VarChar).Value = "Available";
+                mydb.openConnection();
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    mydb.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
             }
+
+        
         }
         //lay so luong
         public int fAmount(int fid)

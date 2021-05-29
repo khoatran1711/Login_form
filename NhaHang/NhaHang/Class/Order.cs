@@ -28,7 +28,7 @@ namespace NhaHang.Class
         public DataTable getOrder(int id)
         {
             mydb.openConnection();
-            SqlCommand cmd = new SqlCommand(@"Select fname,famount,fcost from Orders where id = @id", mydb.getConnection);
+            SqlCommand cmd = new SqlCommand(@"Select fname,famount,fcost,fid from Orders where id = @id", mydb.getConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -36,7 +36,7 @@ namespace NhaHang.Class
 
             return table;
         }
-        //them mon an
+        //them order
         public bool insertOrder(int id, int fid, string fname, int famount, int fcost)
         {
             SqlCommand cmd = new SqlCommand("insert into Orders (id, fid,fname,famount,fcost) values (@id,@fid,@fn,@amt,@cost)", mydb.getConnection);
@@ -46,6 +46,26 @@ namespace NhaHang.Class
             cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
             cmd.Parameters.Add("@amt", SqlDbType.Int).Value = famount;
             cmd.Parameters.Add("@cost", SqlDbType.BigInt).Value = fcost;
+
+            mydb.openConnection();
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                mydb.closeConnection();
+                return true;
+            }
+            else
+            {
+                mydb.closeConnection();
+                return false;
+            }
+        }
+        //xoa order
+        public bool deleteOrder(int id, int fid)
+        {
+            SqlCommand cmd = new SqlCommand("delete from Orders where id = @id and fid = @fid", mydb.getConnection);
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@fid", SqlDbType.Int).Value = fid;
 
             mydb.openConnection();
             if (cmd.ExecuteNonQuery() == 1)
