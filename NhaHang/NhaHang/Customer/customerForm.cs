@@ -282,7 +282,7 @@ namespace NhaHang.Customer
 
                 Microsoft.Office.Interop.Word.Table tab;
                 Microsoft.Office.Interop.Word.Range rangeof = oDoc.Bookmarks.get_Item(ref b).Range;
-                tab = oDoc.Tables.Add(rangeof, Row_Count, Col_Count + 1, ref oMissing, ref oMissing);
+                tab = oDoc.Tables.Add(rangeof, Row_Count, Col_Count, ref oMissing, ref oMissing);
                 tab.Range.ParagraphFormat.SpaceAfter = 8;
                 tab.Rows.Height = 60;
                 tab.Cell(1, 1).Range.Text = "STT";
@@ -290,7 +290,7 @@ namespace NhaHang.Customer
                 tab.Cell(1, 1).Range.Bold = 3;
                 tab.Cell(1, 1).Range.Font.Color = Word.WdColor.wdColorWhite;
 
-                for (int i = 0; i < Col_Count; i++)
+                for (int i = 0; i < Col_Count-1; i++)
                 {
                     tab.Cell(1, i + 2).Range.Text = DGV.Columns[i].HeaderText;
                     tab.Cell(1, i + 2).Range.Paragraphs.Format.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
@@ -309,7 +309,7 @@ namespace NhaHang.Customer
                     oTemp = "";
                     int c;
                     tab.Cell(r + 2, 1).Range.Text = (r + 1).ToString();
-                    for (c = 0; c < Col_Count - 1; c++)
+                    for (c = 0; c < Col_Count - 2; c++)
                     {
                         oTemp = DGV.Rows[r].Cells[c].Value.ToString();
                         tab.Cell(r + 2, c + 2).Range.Text = oTemp;
