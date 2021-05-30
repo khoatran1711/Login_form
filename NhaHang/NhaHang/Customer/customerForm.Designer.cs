@@ -30,9 +30,8 @@ namespace NhaHang.Customer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customerForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customerTabControl = new System.Windows.Forms.TabControl();
             this.homeTabPage = new System.Windows.Forms.TabPage();
             this.FDtabPage = new System.Windows.Forms.TabPage();
@@ -131,8 +130,7 @@ namespace NhaHang.Customer
             // 
             // homeTabPage
             // 
-            this.homeTabPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.homeTabPage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeTabPage.BackgroundImage")));
+            this.homeTabPage.BackColor = System.Drawing.Color.Maroon;
             this.homeTabPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.homeTabPage.Location = new System.Drawing.Point(4, 41);
             this.homeTabPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -338,7 +336,6 @@ namespace NhaHang.Customer
             // 
             // codefePicture
             // 
-            this.codefePicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("codefePicture.BackgroundImage")));
             this.codefePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.codefePicture.Location = new System.Drawing.Point(1148, 2);
             this.codefePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -399,23 +396,23 @@ namespace NhaHang.Customer
             this.foodDataGridView.AllowUserToResizeColumns = false;
             this.foodDataGridView.AllowUserToResizeRows = false;
             this.foodDataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.foodDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.foodDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.foodDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.PapayaWhip;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.foodDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PapayaWhip;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.foodDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.foodDataGridView.GridColor = System.Drawing.Color.White;
             this.foodDataGridView.Location = new System.Drawing.Point(11, 14);
             this.foodDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -629,7 +626,6 @@ namespace NhaHang.Customer
             // 
             // billTabPage
             // 
-            this.billTabPage.BackgroundImage = global::NhaHang.Properties.Resources.Screenshot_2021_05_25_114859;
             this.billTabPage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.billTabPage.Controls.Add(this.panel13);
             this.billTabPage.Location = new System.Drawing.Point(4, 41);
@@ -791,7 +787,6 @@ namespace NhaHang.Customer
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1329, 754);
             this.Controls.Add(this.customerTabControl);

@@ -114,7 +114,7 @@ namespace NhaHang.Customer
         
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (fNameTextBox.Text == null)
+            if (fNameTextBox.Text.Trim() == "")
             {
                 MessageBox.Show("Please choose a drink");
             }
@@ -174,36 +174,36 @@ namespace NhaHang.Customer
         }
         private void orderButton_Click(object sender, EventArgs e)
         {
-            int checkSlot = tb.slotTable(Convert.ToInt32(tableComboBox.Text)) - Convert.ToInt32(customerNumericUpDown.Text);
-            if (checkSlot < 0)
+            if (tableComboBox.SelectedValue == null)
             {
-                MessageBox.Show("Sorry, there are not enough seats at this table now :(");
+                MessageBox.Show("Please choose where you are");
             }
             else
             {
-                int tid = Convert.ToInt32(tableComboBox.Text); 
-                tb.updateTableStatus(tid, checkSlot);
-                checkOutButton.Visible = true;
-                if (orderDataGridView.Rows.Count == 0)
+                int checkSlot = tb.slotTable(Convert.ToInt32(tableComboBox.Text)) - Convert.ToInt32(customerNumericUpDown.Text);
+                if (checkSlot < 0)
                 {
-                    MessageBox.Show("Please choose what you want to use");
+                    MessageBox.Show("Sorry, there are not enough seats at this table now :(");
                 }
                 else
                 {
-                    if (tableComboBox.Text == null)
+                    int tid = Convert.ToInt32(tableComboBox.Text); 
+                    tb.updateTableStatus(tid, checkSlot);
+                    checkOutButton.Visible = true;
+                    if (orderDataGridView.Rows.Count == 0)
                     {
-                        MessageBox.Show("Please choose where you are");
+                        MessageBox.Show("Please choose what you want to use");
                     }
                     else
                     {
-                        loadBill();
-                        costLabel.Text = order.totalCost(oid).ToString();
-                        tableBillTextBox.Text = tableComboBox.Text;
-                        dayTextBox.Text = dateDateTimePicker.Text;
-                        cusNumTextBox.Text = customerNumericUpDown.Value.ToString();
-                        loadTable();
+                       loadBill();
+                            costLabel.Text = order.totalCost(oid).ToString();
+                            tableBillTextBox.Text = tableComboBox.Text;
+                            dayTextBox.Text = dateDateTimePicker.Text;
+                            cusNumTextBox.Text = customerNumericUpDown.Value.ToString();
+                            loadTable();
 
-                        MessageBox.Show("Order Successfully!!!<3");
+                            MessageBox.Show("Order Successfully!!!<3");
                     }
                 }
             }

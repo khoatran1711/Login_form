@@ -153,7 +153,6 @@ namespace NhaHang.FoodDrink
             this.AcceptButton = this.addButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NhaHang.Properties.Resources.addfood;
             this.ClientSize = new System.Drawing.Size(344, 681);
             this.Controls.Add(this.addPicButton);
             this.Controls.Add(this.addButton);
